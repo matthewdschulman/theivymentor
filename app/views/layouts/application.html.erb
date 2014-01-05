@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<%= stylesheet_link_tag "application", media: "all",
+										"data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    	<%= csrf_meta_tags %>
+        <%= render 'layouts/shim' %>
+	    <!--[if lt IE 9]>
+	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	    <script type="text/javascript">
+  		google.load('visualization', '1', {'packages':['motionchart']});
+      	google.setOnLoadCallback(drawChart);
+      	function drawChart() {
+	        var data = new google.visualization.DataTable();
+	        data.addColumn('string', 'Computer Name');
+			data.addColumn('date', 'Date');	   
+	        data.addColumn('number', 'Weight (lbs)');          
+	        data.addColumn('number', 'Processor Speed (GHz)');
+			data.addColumn('number', 'Hard Drive Size (GB)'); 
+	        data.addColumn('number', 'Screen Size (Inches)');	
+	        data.addColumn('number', 'Hard Drive RPM');
+	        data.addColumn('number', 'Cache (MB)');        
+	        data.addColumn('string', 'Brand');
+	        data.addColumn('string', 'Operating System');
+	        data.addColumn('string', 'Processor Type');	        
+	        data.addColumn('number', 'Screen Resolution of Max Dimension');
+	        data.addColumn('string', 'Video Memory');
+	        data.addColumn('number', 'Battery Life (Hours)');
+	        data.addColumn('string', 'Graphics Card');
+	        data.addColumn('number', 'Memory Size (GB)');
+	        data.addColumn('string', 'Solid State Hard Drive?');
+	        data.addColumn('number', 'Price');
+	        data.addColumn('string', 'Does the Laptop Have a Touchscreen?');
+	        data.addColumn('string', 'Does the Laptop Have an HDMI port?');
+	        data.addColumn('string', 'Does the Laptop Have a VGA port?');
+	        data.addColumn('string', 'Does the Laptop Have Bluetooth?');
+	        data.addRows([
+				
+					['Acer Aspire V3-772G-9822',new Date (2014,1,1),7.05,2.2,1024,17.3,5400,6,'Acer','Windows 8','Intel Core i7-4702MQ 2.2GHz',1920,'2GB',2.5,'NVIDIA Geforce GTX 760M',12,'no',1129,'Does Not Have a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Acer Aspire S7 S7-392-6803',new Date (2014,1,1),2.87,1.6,128,13.3,5400,3,'Acer','Windows 8','Intel Core i5-4200U 1.6GHz',1920,'Shared Memory',8,'Intel HD Graphics 4400',4,'128GB SSD',1277.57,'Has a Touchscreen','Has HDMI','Does Not Have VGA','Does Not Have Bluetooth'], ['Acer  C710-2487',new Date (2014,1,1),3.05,1.1,320,11.6,5400,2,'Acer','Google Chrome OS','Intel Celeron 847 1.1GHz',1366,'Shared Memory',4,'Intel HD Graphics',4,'no',260.99,'Does Not Have a Touchscreen','Has HDMI','Has VGA','Does Not Have Bluetooth'], ['Acer Aspire E1-572-6870',new Date (2014,1,1),5.18,1.6,500,15.6,5400,3,'Acer','Windows 8','Intel Core i5-4200U 1.6GHz',1366,'Shared Memory',4,'Intel HD Graphics 4400',4,'no',429.99,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Acer Aspire M M5-583P-6428',new Date (2014,1,1),5.29,1.6,500,15.6,5400,3,'Acer','Windows 8','Intel Core i5-4200U 1.6GHz',1366,'Shared Memory',6.5,'Intel HD Graphics 4400',8,'no',629,'Has a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Dell Inspiron 17 (i17RV-6273BLK)',new Date (2014,1,1),6.35,1.7,500,17.3,5400,3,'Dell','Windows 8','Intel Core i3-4010U 1.7GHz',1600,'Shared Memory',4,'Intel HD Graphics 4400',4,'no',499.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Dell Latitude 6430u (469-3885)',new Date (2014,1,1),4,1.8,256,14,5400,3,'Dell','Windows 7','Intel Core i5-3427U 1.8GHz',1366,'Shared Memory',7,'Intel HD Graphics 4000',8,'256GB SSD',1599.95,'Has a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Dell XPS 12 (ULT)',new Date (2014,1,1),3.35,1.6,128,12.5,5400,3,'Dell','Windows 8','Intel Core i5-4200U 1.6GHz',1920,'Shared Memory',8,'Intel HD Graphics 4400',4,'128GB SSD',1099.99,'Has a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Dell Inspiron 17 (i17RV-5454BLK)',new Date (2014,1,1),6.35,1.6,750,17.3,5400,3,'Dell','Windows 8','Intel Core i5-4200U 1.6GHz',1600,'Shared Memory',4,'Intel HD Graphics 4400',6,'no',599.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Dell Latitude E6430 (469-4216)',new Date (2014,1,1),4.44,2.7,320,14,7200,3,'Dell','Windows 7','Intel Core i5-3340M 2.7GHz',1366,'Shared Memory',11,'Intel HD Graphics 4000',4,'no',999.99,'Does Not Have a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Dell Alienware 14 (ALW14-2812sLV)',new Date (2014,1,1),6.5,2.4,750,14,7200,6,'Dell','Windows 8','Intel Core i7-4700MQ 2.4GHz',1920,'1GB',5,'NVIDIA GeForce GT 750M',8,'no',1299.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Dell XPS 15 XPS15-11047sLV',new Date (2014,1,1),5.79,2.2,512,15.6,5400,6,'Dell','Windows 8','Intel Core i7-3632QM 2.2GHz',1920,'2GB',7,'NVIDIA GeForce GT 640M',16,'512GB SSD',1599.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Dell Alienware 18 (ALW18-3002sLV)',new Date (2014,1,1),12.3,2.4,750,18.4,7200,6,'Dell','Windows 7','Intel Core i7-4700MQ 2.4GHz',1920,'3GB',2.5,'2 x NVIDIA GeForce GTX 770M (Nvidia SLI)',8,'no',2199.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Asus  N550JV-DB71',new Date (2014,1,1),5.6,2.4,1024,15.6,5400,6,'Asus','Windows 8','Intel Core i7-4700HQ 2.4GHz',1920,'2GB',5,'NVIDIA GeForce GT 750M',8,'no',999.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Asus  X550CA-DB31',new Date (2014,1,1),4.8,1.8,500,15.6,5400,3,'Asus','Windows 8','Intel Core i3-3217U 1.8GHz',1366,'Shared Memory',3,'Intel GMA HD Graphics',4,'no',479.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Does Not Have Bluetooth'], ['Asus G75 Series G750JX-DB71',new Date (2014,1,1),9.5,2.4,1024,17.3,5400,6,'Asus','Windows 8','Intel Core i7-4700HQ 2.4GHz',1920,'3GB',3.5,'NVIDIA Geforce GTX 770M',16,'no',1749.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['HP ZBook 15 (F2P51UT#ABA)',new Date (2014,1,1),6.5,2.7,750,15.6,7200,6,'HP','Windows 7','Intel Core i7-4800MQ 2.70GHz',1920,'Shared Memory',7.75,'NVIDIA Quadro K2100M',16,'no',2819.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Has VGA','Has Bluetooth'], ['HP Pavilion G6-2210US',new Date (2014,1,1),5.46,2.5,640,15.6,5400,1,'HP','Windows 8','AMD A4-4300M 2.5GHz',1366,'Shared Memory',3.25,'AMD Radeon HD 7420G',4,'no',543.95,'Does Not Have a Touchscreen','Has HDMI','Has VGA','Does Not Have Bluetooth'], ['HP Pavilion 14-q070nr',new Date (2014,1,1),4,1.4,16,14,5400,2,'HP','Google Chrome OS','Intel Celeron 2955U 1.4GHz',1366,'Shared Memory',4.25,'Intel HD Graphics',4,'16GB SSD',379.99,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['HP EliteBook Folio 9470m (E1Y62UT#ABA)',new Date (2014,1,1),3.56,1.9,256,14,5400,3,'HP','Windows 7','Intel Core i5-3437U 1.9GHz',1366,'Shared Memory',10,'Intel HD Graphics 4000',4,'256GB SSD',1299.99,'Has a Touchscreen','Does Not Have HDMI','Has VGA','Has Bluetooth'], ['HP Spectre 15T-4000.',new Date (2014,1,1),3.2,1.9,256,15.6,5400,3,'HP','Windows 8','Intel Core i7 1.9GHz',1920,'Shared Memory',6,'Intel HD',8,'256GB SSD',899.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Does Not Have Bluetooth'], ['Lenovo IdeaPad Yoga 13 (59359564)',new Date (2014,1,1),3.3,2.0,256,13.3,5400,4,'Lenovo','Windows 8','Intel Core i7-3537U 2.0GHz',1600,'Shared Memory',8,'Intel HD Graphics 4000',8,'256GB SSD',1799.95,'Has a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['ThinkPad  X240',new Date (2014,1,1),2.84,1.9,500,12.5,7200,3,'ThinkPad','Windows 7','Intel Core i5 4300U(1.90GHz)',1366,'Shared Memory',6,'Intel HD Graphics 4400',4,'no',1218.02,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Lenovo IdeaPad Y510P (59375624)',new Date (2014,1,1),6.4,2.4,1048,15.6,5400,6,'Lenovo','Windows 8','Intel Core i7 4700MQ(2.40GHz)',1920,'4GB',5,'Dual NVIDIA GeForce GT750M Discrete Graphics (SLI)',16,'no',1249.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['ThinkPad  T440s',new Date (2014,1,1),3.8,1.9,256,14,5400,3,'ThinkPad','Windows 7','Intel Core i5 4300U(1.90GHz)',1920,'Shared Memory',6,'Intel HD Graphics 4400',4,'256GB SSD',1599.55,'Has a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Lenovo IdeaPad U310 (59365302)',new Date (2014,1,1),3.7,1.8,524,13.3,5400,3,'Lenovo','Windows 8','Intel Core i5-3337U 1.8GHz',1366,'Shared Memory',6,'Intel HD Graphics 4000',4,'Partial SSD (24GB)',949.95,'Has a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Lenovo ThinkPad X1 Carbon 3444B9U',new Date (2014,1,1),3,1.8,128,14,5400,3,'Lenovo','Windows 7','Intel Core i5 1.80GHz',1600,'Shared Memory',8.2,'HD 4000',4,'128GB SSD',1618.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['ThinkPad Edge E431 (62775AU)',new Date (2014,1,1),4.7,2.6,500,14,7200,3,'ThinkPad','Windows 7','Intel Core i5-3230M 2.6GHz',1366,'Shared Memory',6.3,'Intel HD Graphics 3000',4,'no',569.88,'Does Not Have a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Lenovo IdeaPad U310 (59365302)',new Date (2014,1,1),3.7,1.8,524,13.3,5400,3,'Lenovo','Windows 8','Intel Core i5-3337U 1.8GHz',1366,'Shared Memory',6,'Intel HD Graphics 4000',4,'Partial SSD (24GB)',949.95,'Has a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Samsung ATIV Book 9 Plus NP940X3G-K01US',new Date (2014,1,1),2.56,1.6,128,13.3,5400,3,'Samsung','Windows 8','Intel Core i5-4200U 1.6GHz (Haswell 4th Generation)',3200,'Shared Memory',7.5,'Intel HD Graphics 4400',4,'128GB SSD',1399.99,'Has a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Samsung ATIV Book 5 NP540U4E-K03US',new Date (2014,1,1),4.4,1.8,500,14,5400,3,'Samsung','Windows 8','Intel Core i5-3337U 1.8GHz',1366,'Shared Memory',8,'Intel HD Graphics 4000',4,'no',854.94,'Has a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Samsung ATIV Book 9 NP940X3G-K04US',new Date (2014,1,1),3,1.8,256,13.3,5400,4,'Samsung','Windows 8.1','Intel Core i7 4500U 1.8GHz',3200,'Shared Memory',7.5,'Intel HD Graphics 4400',8,'256GB SSD',1910.19,'Has a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Samsung ATIV Book 6 NP680Z5E-X01US',new Date (2014,1,1),5.38,2.4,1024,15.6,5400,6,'Samsung','Windows 8','Intel Core i7-3635QM 2.4GHz',1920,'1GB',5,'AMD Radeon HD 8770M',8,'no',1066.99,'Has a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Samsung  XE303C12-A01US',new Date (2014,1,1),2.43,1.7,16,11.6,5400,1,'Samsung','Google Chrome OS','Samsung Exynos 5 Dual Core 1.7GHz',1366,'Shared Memory',6.3,'Integrated Graphics Card',2,'16GB SSD',249,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Toshiba Qosmio X75-A7295',new Date (2014,1,1),7.6,2.4,1024,17.3,7200,6,'Toshiba','Windows 8','Intel Core i7-4700MQ 2.4GHz',1920,'3GB',3,'NVIDIA Geforce GTX 770M',16,'no',1399.99,'Does Not Have a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Toshiba Satellite L55Dt-A5253NR',new Date (2014,1,1),5.6,2.0,750,15.6,5400,2,'Toshiba','Windows 8','AMD A6-5200 2.0GHz',1366,'Shared Memory',5,'AMD Radeon HD 8400',6,'no',685.11,'Has a Touchscreen','Has HDMI','Has VGA','Does Not Have Bluetooth'], ['Toshiba Qosmio X875-Q7390',new Date (2014,1,1),7.5,2.4,2048,17.3,5400,6,'Toshiba','Windows 8','Intel Core i7-3630QM 2.4GHz',1920,'3GB',2,'NVIDIA Geforce GTX 670(3D Vision)',16,'no',1599.99,'Does Not Have a Touchscreen','Has HDMI','Has VGA','Has Bluetooth'], ['Toshiba Satellite U845t-S4165',new Date (2014,1,1),3.8,1.8,128,14,5400,3,'Toshiba','Windows 8','Intel Core i5-3337U 1.8GHz',1366,'Shared Memory',6,'Intel HD Graphics 4000',6,'128GB SSD',1099.95,'Has a Touchscreen','Has HDMI','Does Not Have VGA','Does Not Have Bluetooth'], ['Apple MacBook Pro MC975LL/A',new Date (2014,1,1),4.46,2.3,256,15.4,5400,6,'Apple','Mac OS X v10.7 Lion','Intel Core i7 2.3 GHz',2880,'1GB',7,'NVIDIA GeForce GT 650M Switchable Graphics',8,'256GB SSD',1799.99,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro MD101LL/A',new Date (2014,1,1),4.5,2.5,500,13.3,5400,3,'Apple','Mac OS X v10.7 Lion','Intel Core i5 2.5GHz',1280,'Shared Memory',7,'Intel HD Graphics 4000',4,'no',1149.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro MC976LL/A',new Date (2014,1,1),4.46,2.6,512,15.4,5400,6,'Apple','Mac OS X v10.7 Lion','Intel Core i7 2.6GHz',2880,'1GB',7,'NVIDIA GeForce GT 650M Switchable Graphics',8,'512GB SSD',2599.99,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro with Retina Display ME866LL/A',new Date (2014,1,1),3.46,2.6,512,13.3,5400,3,'Apple','Mac OS X v10.9 Mavericks','Intel Core i5 2.6GHz (4th Gen Haswell)',2560,'Shared Memory',9,'Integrated Intel Iris Graphics',8,'512GB SSD',1799,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro with Retina Display ME865LL/A',new Date (2014,1,1),3.46,2.4,256,13.3,5400,3,'Apple','Mac OS X v10.9 Mavericks','Intel Core i5 2.4GHz (4th Gen Haswell)',2560,'Shared Memory',9,'Integrated Intel Iris Graphics',8,'256GB SSD',1499,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro with Retina Display ME294LL/A',new Date (2014,1,1),4.46,2.3,512,15.4,5400,6,'Apple','Mac OS X v10.9 Mavericks','Intel Core i7 2.3GHz (Crystalwell)',2880,'2GB',8,'NVIDIA GeForce GT 750M',16,'512GB SSD',2599,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Air MD761LL/A',new Date (2014,1,1),2.96,1.3,256,13.3,5400,3,'Apple','Mac OS X v10.8 Mountain Lion','1.3GHz dual-core Intel Core i5',1440,'Shared Memory',12,'Intel HD Graphics 5000',4,'256GB SSD',1349,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro with Retina Display ME864LL/A',new Date (2014,1,1),3.46,2.4,128,13.3,5400,3,'Apple','Mac OS X v10.9 Mavericks','Intel Core i5 2.4GHz (4th Gen Haswell)',2560,'Shared Memory',9,'Integrated Intel Iris Graphics',4,'128GB SSD',1299,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Air MD711LL/A',new Date (2014,1,1),2.38,1.3,128,11.6,5400,3,'Apple','Mac OS X v10.8 Mountain Lion','1.3GHz dual-core Intel Core i5',1366,'Shared Memory',9,'Intel HD Graphics 5000',4,'128GB SSD',999.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Air MD712LL/A',new Date (2014,1,1),2.38,1.3,256,11.6,5400,3,'Apple','Mac OS X v10.8 Mountain Lion','1.3GHz dual-core Intel Core i5',1366,'Shared Memory',9,'Intel HD Graphics 5000',4,'256GB SSD',1199,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro with Retina Display ME293LL/A',new Date (2014,1,1),4.46,2,256,15.4,5400,6,'Apple','Mac OS X v10.9 Mavericks','Intel Core i7 2.0GHz (Crystalwell)',2880,'Shared Memory',8,'Integrated Intel Iris Graphics',8,'256GB SSD',2049,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro ME662LL/A',new Date (2014,1,1),3.57,2.6,256,13.3,5400,3,'Apple','Mac OS X v10.8 Mountain Lion','Intel Core i5 2.6GHz',2560,'Shared Memory',7,'Intel HD Graphics 4000',8,'256GB SSD',1649.99,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Air MD760LL/A',new Date (2014,1,1),2.96,1.3,128,13.3,5400,3,'Apple','Mac OS X v10.8 Mountain Lion','1.3GHz dual-core Intel Core i5',1440,'Shared Memory',12,'Intel HD Graphics 5000',4,'128GB SSD',1109.99,'Does Not Have a Touchscreen','Does Not Have HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro ME665LL/A',new Date (2014,1,1),4.46,2.7,512,15.4,5400,6,'Apple','Mac OS X v10.8 Mountain Lion','Intel Core i7 2.7GHz',2880,'1GB',7,'NVIDIA GeForce GT 650M',16,'512GB SSD',2599.99,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], ['Apple MacBook Pro ME664LL/A',new Date (2014,1,1),4.46,2.4,256,15.4,5400,6,'Apple','Mac OS X v10.8 Mountain Lion','Intel Core i7 2.4GHz',2880,'1GB',7,'NVIDIA GeForce GT 650M',8,'256GB SSD',2049.99,'Does Not Have a Touchscreen','Has HDMI','Does Not Have VGA','Has Bluetooth'], 
+
+
+
+
+
+
+
+					]);
+
+	        var chart = new google.visualization.MotionChart(document.getElementById('chart_div'));
+	        var options = {};
+	        options['state'] = '{"xLambda":1,"xZoomedDataMin":249,"yZoomedDataMin":1.1,"xZoomedDataMax":2819.99,"dimensions":{"iconDimensions":["dim0"]},"yZoomedIn":false,"duration":{"multiplier":1,"timeUnit":"D"},"orderedByY":false,"yLambda":1,"xAxisOption":"17","showTrails":true,"orderedByX":false,"colorOption":"18","playDuration":15000,"sizeOption":"13","xZoomedIn":false,"uniColorForNonSelected":false,"iconKeySettings":[],"nonSelectedAlpha":0.4,"yAxisOption":"3","yZoomedDataMax":2.7,"time":"2014-02-01","iconType":"BUBBLE"}';
+			options['time'] = false;
+			options['date'] = false;
+			options['width'] = 950;
+			options['height'] = 600;
+			options['showYScalePicker'] = false;
+			options['showXScalePicker'] = false;
+			chart.draw(data, options);
+			var counter = 1;
+			google.visualization.events.addListener(chart, 'statechange', someFunc);
+			//iconKeySettings[0].key.dim0
+			function someFunc(e){
+				if (chart.getState() != null) {
+					counter += 1;
+					var state = JSON.parse(chart.getState());
+					console.log(counter);
+					if (counter > 2) {
+						
+						var state = JSON.parse(chart.getState());
+						console.log(state);
+						var longtitle = state.iconKeySettings[0].key.dim0;
+						var truncated = longtitle.replace(/-/g, "").replace(/ /g, "").replace(/[{()} ]/g, "").replace(/#/g, "").replace(/\./g, "").replace(/\//g, "");						
+						window.location = '/'+truncated;
+
+					}
+				}
+			}      
+		}
+    </script>	
+    </head>
+    <body>
+        <%= render 'layouts/header' %>
+        <div class ="container">
+            <%= yield %>
+            <%= render 'layouts/footer' %>
+        </div>
+    </body>
+</html>

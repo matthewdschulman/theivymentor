@@ -1,0 +1,3 @@
+Shopping Grapher
+
+This is an application made to compare product attributes in a dynamic graph.
