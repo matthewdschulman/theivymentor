@@ -4,99 +4,71 @@
 
 $grayMediumLight: #eaeaea;
 
-html {
-	overflow-y: scroll;
-}
-
-body {
-	padding-top: 60 px;
-}
-
-section {
-	overflow: auto;
-}
-
-textarea {
-	resize: vertical;
-}
-
-.center {
-	text-align: center;
-	h1 {
-		margin-bottom: 10px;
-	}
-}
-
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-	line-height: 1;
-}
-
-h1 {
-	font-size: 3em;
-	letter-spacing: -2px;
-	margin-bottom: 30px;
-	text-align: center;
+.fixedheader #navbar {
+  background: white; }
+  .fixedheader #navbar #logo {
+    background-image: url("https://dl.dropboxusercontent.com/u/61965692/shopnplot.png"); }
 }
 
 
-h2 {
-	font-size: 1.2em;
-	letter-spacing: -1px;
-	margin-bottom: 30px;
-	text-align: center;
-	font-weight: normal;
-	color: $grayLight;
-}
 
-p {
-	font-size: 1.1em;
-	line-height: 1.7em;
-}
 
-/* header */
+
+
+
+ .site-title,
+        .site-description {
+            position: absolute;
+            clip: rect(1px 1px 1px 1px); /* IE7 */
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+            .site-header .home-link {
+            min-height: 0;
+        }
+
+
+
+.fixedheader #navbar {
+  background: white; }
+  .fixedheader #navbar #logo {
+    background-image: url('http://newyork.yankees.mlb.com/mlb/images/team_logos/social_media/og/nyy.jpg'); }
+
+    @media only screen and (max-width: 865px) {
+  #navbar {
+    border-bottom: none; }
+    #navbar #logo {
+      background-image: url('http://newyork.yankees.mlb.com/mlb/images/team_logos/social_media/og/nyy.jpg'); }
+    #navbar .ie8 #logo {
+      background-image: url('http://newyork.yankees.mlb.com/mlb/images/team_logos/social_media/og/nyy.jpg'); }
+    #navbar ul li:hover > a,
+    #navbar ul li a:hover, #navbar ul .current-menu-item a {
+      background-color: transparent;
+      color: #000; }
+
+  #site-navigation {
+    background: white; }
+    #site-navigation .menu-site-nav-container, #site-navigation .menu-secondary-nav-container {
+      clear: both;
+      display: none; }
+      #site-navigation .menu-site-nav-container ul.nav-menu, #site-navigation .menu-secondary-nav-container ul.nav-menu {
+        border-left: none;
+        float: none;
+        padding: 0 2em;
+        margin-left: 0; }
+        #site-navigation .menu-site-nav-container ul.nav-menu li, #site-navigation .menu-secondary-nav-container ul.nav-menu li {
+          border-bottom: 1px solid #c7c7c7;
+          display: block;
+          text-align: center; }
+      #site-navigation .menu-site-nav-container ul.nav-menu.secondary, #site-navigation .menu-secondary-nav-container ul.nav-menu.secondary {
+        float: none; }
+    #site-navigation .menu-toggle {
+      color: #c7c7c7;
+      display: inline-block;
+      float: right;
+      font-size: 1.5em;
+      margin: .84em; } }
+
+
 
 #logo {
-	float: left;
-	margin-right: 10px;
-	font-size: 1.7em;
-	color: white;
-	text-transform: uppercase;
-	letter-spacing: -1px;
-	padding-top: 9px;
-	font-weight: bold;
-	line-height: 1;
-	&:hover {
-		color: white;
-		text-decoration: none;
-	}
-}
-
-
-/* footer */
-
-footer {
-	margin-top: 45px;
-	padding-top: 5px;
-	border-top: 1px solid $grayMediumLight;
-	color: $grayLight;
-	a {
-		color: $gray;
-		&:hover {
-			color:$grayDarker;
-		}
-	}
-	small {
-		float: left;
-	}
-	ul {
-		float: right;
-		list-style: none;
-		li {
-			float: left;
-			margin-left: 10px;
-		}
-	}
-}
-
+    background: url('http://newyork.yankees.mlb.com/mlb/images/team_logos/social_media/og/nyy.jpg') no-repeat 0 center; }

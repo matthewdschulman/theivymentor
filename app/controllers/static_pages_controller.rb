@@ -8,7 +8,10 @@ class StaticPagesController < ApplicationController
   def laptops
   end
 
-  def contact
+  def about
+  end
+
+  def cssstyleforsite
   end
 
   def AppleMacBookProME664LLA

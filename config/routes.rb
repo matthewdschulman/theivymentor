@@ -2,8 +2,9 @@ Shopnplot::Application.routes.draw do
   root 'static_pages#home'
   match '/help', to: 'static_pages#help', via: 'get'
   match '/laptops', to: 'static_pages#laptops', via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/about', to: 'static_pages#about', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
+  match '/cssstyleforsite', to: 'statics_pages#cssstyleforsite', via: 'get'
 
   match '/AcerAspireV3772G9822', to: 'static_pages#AcerAspireV3772G9822', via: 'get'
   match '/AcerAspireS7S73926803', to: 'static_pages#AcerAspireS7S73926803', via: 'get'
