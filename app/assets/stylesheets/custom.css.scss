@@ -16,16 +16,6 @@ $grayMediumLight: #eaeaea;
 
 
 
- .site-title,
-        .site-description {
-            position: absolute;
-            clip: rect(1px 1px 1px 1px); /* IE7 */
-            clip: rect(1px, 1px, 1px, 1px);
-        }
-            .site-header .home-link {
-            min-height: 0;
-        }
-
 
 
 .fixedheader #navbar {
