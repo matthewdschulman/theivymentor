@@ -73,8 +73,8 @@
 						var state = JSON.parse(chart.getState());
 						console.log(state);
 						var longtitle = state.iconKeySettings[0].key.dim0;
-						var truncated = longtitle.replace(/-/g, "").replace(/ /g, "").replace(/[{()} ]/g, "").replace(/#/g, "").replace(/\./g, "").replace(/\//g, "");						
-						window.location = '/'+truncated;
+						var truncated = longtitle.replace(/-/g, "").replace(/ /g, "").replace(/[{()} ]/g, "").replace(/#/g, "").replace(/\./g, "").replace(/\//g, "");	
+						window.open('/'+truncated);
 
 					}
 				}
